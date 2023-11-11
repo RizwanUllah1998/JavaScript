@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS data list</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<input type="text" placeholder="Enter Student's Name" required id="sname"><br>
+<input type="text" placeholder="Enter Father's Name" required id="fname"><br>
+<input type="text" placeholder="Enter Student ID" required id="sid"><br>
+<input type="text" placeholder="Enter Batch Code" required id="batch"><br>
+<input type="number" placeholder="Enter Modular Marks" required id="marks"><br>
+<button onClick="studentdata()">Save Data</button><br>
+<input type="text" placeholder="Search here" class="form-control" style="width: 30%;" id="search"><br>
+
+<table class="table table-bordered table-dark" style="width: 50%;">
+	<thead>
+		<tr>
+			<th>Student Name</th>
+			<th>Father Name</th>
+			<th>Student ID</th>
+			<th>Batch Code</th>
+			<th>Marks</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody id="rows">		
+	</tbody>
+</table>
+<script src="script.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var searchInput = document.getElementById("search");
+		searchInput.addEventListener("keyup", function() {
+		var value = this.value.toLowerCase();
+    	var rows = document.querySelectorAll("#rows tr");
+
+    rows.forEach(function(row) {
+      	var cells = row.getElementsByTagName("td");
+     	var shouldDisplay = false;  
+      for (var i = 0; i < cells.length; i++) {
+        var cellText = cells[i].textContent.toLowerCase();
+        if (cellText.indexOf(value) > -1) {
+          shouldDisplay = true;
+          break;
+        }
+	}
+	row.style.display = shouldDisplay ? "table-row" : "none";
+    });
+  });
+});
+
+</script>
+</body>
+</html>
+

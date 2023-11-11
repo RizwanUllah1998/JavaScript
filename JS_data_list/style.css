@@ -1,0 +1,22 @@
+/* @import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+body{
+    font-family: 'Tengirine';
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined&family=Pixelify+Sans&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined&family=Pixelify+Sans&display=swap');
+
+
+
+h1{
+    font-family: 'Noto Sans NKo Unjoined', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+p{
+    font-family: 'Noto Sans NKo Unjoined', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
+}
